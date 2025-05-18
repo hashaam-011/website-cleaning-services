@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Home() {
+  const pathname = usePathname();
+
   return (
     <div className="font-sans bg-white text-[#222]">
     {/* Navbar - updated to match image with solid white background */}
@@ -11,16 +14,16 @@ export default function Home() {
           <span className="font-bold text-xl text-[#222]">Cool Technical Services</span>
         </div>
         <nav className="hidden md:flex gap-6 text-sm font-medium">
-        <a href="/" className="text-[#222] hover:text-yellow-500">Home</a>
-            <a href="/services" className="text-[#222] hover:text-yellow-500">Services</a>
-            <a href="/packages" className="text-[#222] hover:text-yellow-500">Packages</a>
-            <a href="/pricing" className="text-[#222] hover:text-yellow-500">Pricing</a>
-            <a href="/gallery" className="text-[#222] hover:text-yellow-500">Gallery</a>
-            <a href="/about" className="text-[#222] hover:text-yellow-500 font-bold underline">About Us</a>
-            <a href="/contact" className="text-[#222] hover:text-yellow-500">Contact Us</a>
+        <a href="/" className={`text-[#222] hover:text-yellow-500 ${pathname === '/' ? 'underline text-[#00C853]' : ''}`}>Home</a>
+            <a href="/services" className={`text-[#222] hover:text-yellow-500 ${pathname === '/services' ? 'underline text-[#00C853]' : ''}`}>Services</a>
+            <a href="/packages" className={`text-[#222] hover:text-yellow-500 ${pathname === '/packages' ? 'underline text-[#00C853]' : ''}`}>Packages</a>
+            <a href="/pricing" className={`text-[#222] hover:text-yellow-500 ${pathname === '/pricing' ? 'underline text-[#00C853]' : ''}`}>Pricing</a>
+            <a href="/gallery" className={`text-[#222] hover:text-yellow-500 ${pathname === '/gallery' ? 'underline text-[#00C853]' : ''}`}>Gallery</a>
+            <a href="/about" className={`text-[#222] hover:text-yellow-500 ${pathname === '/about' ? 'underline text-[#00C853]' : ''}`}>About Us</a>
+            <a href="/contact" className={`text-[#222] hover:text-yellow-500 ${pathname === '/contact' ? 'underline text-[#00C853]' : ''}`}>Contact Us</a>
         </nav>
         <div className="flex items-center gap-2">
-          <Image src="/images/phone-icon.png" alt="Phone" width={24} height={24} className="text-green-500" />
+
           <a href="tel:8006442" className="text-[#00C853] font-bold text-sm">
             Call Us Now - Toll Free<br />8006442
           </a>
@@ -145,9 +148,8 @@ export default function Home() {
           <div className="flex justify-center mb-8">
             <button className="text-blue-600 font-medium hover:underline">Submit your feedback</button>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-center">
             <Image src="/images/home/third3.jpg" alt="Thumbs Up" width={120} height={120} className="rounded-full" />
-            <Image src="/images/home/topsection3.png" alt="Happy Customer" width={120} height={120} className="rounded-full" />
           </div>
         </div>
       </section>
