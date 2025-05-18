@@ -238,7 +238,7 @@ export default function Home() {
   <div className="relative z-10 w-full max-w-6xl mx-auto min-h-[520px] flex flex-col items-center">
     {/* Arrow 1: Card 1 to Card 2 (right edge to left edge) */}
     <svg className="absolute left-[4%] top-[80px] hidden lg:block" width="880" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="0" cy="80" r="4" fill="#7CFF6B"/>
+      <circle cx="0" cy="80" r="4" fill="#7C  FF6B"/>
       <path d="M4 40 Q180 1 200 78" stroke="#B6FFB0" strokeWidth="2" fill="none" markerEnd="url(#arrowhead1)"/>
       <defs><marker id="arrowhead1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 L2,4 L0,0" fill="#B6FFB0"/></marker></defs>
     </svg>
