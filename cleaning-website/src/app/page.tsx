@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="font-sans bg-white text-[#222]">
     {/* Container for seamless header and hero section */}
-    <div className="w-full relative overflow-hidden min-h-[600px]">
+    <div className="w-full relative overflow-hidden min-h-[750px] py-12">
       {/* Background image with fade */}
       <div className="absolute inset-0 w-full h-full z-0 bg-white">
         <Image
@@ -137,154 +137,289 @@ export default function Home() {
               of luxury to your space with our meticulous attention to detail,
               punctuality, and unmatched customer care.
             </p>
-            <button className="flex items-center gap-2 bg-[#146EB4] text-white px-6 py-2 rounded-md font-bold text-base shadow-md w-fit">
-              Book Now
-              <span className="inline-block ml-1">
-                <svg
-                  width="16"
-                  height="16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 8h6m0 0l-2-2m2 2l-2 2"
-                    stroke="#fff"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+            <button
+              className="relative flex items-center w-[146px] h-[54px] rounded-[8px] shadow-md overflow-hidden border-none p-0 cursor-pointer"
+              style={{ boxShadow: '0 2px 8px 0 rgba(20, 110, 180, 0.10)' }}
+              type="button"
+              onClick={() => window.location.href = '/contact'}
+            >
+              {/* Blue diagonal left side */}
+              <span
+                className="absolute left-0 top-0 h-full w-[75%] flex items-center pl-6 text-white font-bold text-sm"
+                style={{
+                  background: '#146EB4',
+                  clipPath: 'polygon(0 0, 95% 0, 80% 100%, 0% 100%)',
+                  zIndex: 1,
+                }}
+              >
+                Book Now
+              </span>
+              {/* White diagonal right side with blue arrow */}
+              <span
+                className="absolute right-0 top-0 h-full w-[40%] flex items-center justify-center"
+                style={{
+                  background: '#fff',
+                  clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)',
+                  zIndex: 2,
+                }}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#146EB4" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="9,6 18,12 9,18" />
                 </svg>
               </span>
             </button>
           </div>
 
           {/* Right area with three workers */}
-          <div className="w-1/3 h-full flex items-end justify-end relative pb-12">
-            <div className="relative flex items-end h-full" style={{ minHeight: '600px' }}>
-              <div className="flex justify-center items-end">
-                {/* Left worker (mirrored) */}
-                <Image
-                  src="/images/home/topsection4.png"
-                  alt="Worker 2"
-                  width={500}
-                  height={2000}
-                  className="object-contain scale-x-[-1] relative z-10 -mr-80"
-                />
+          <div className="flex justify-center items-end">
+  {/* Left worker (mirrored) */}
+  <Image
+    src="/images/home/topsection4.png"
+    alt="Worker 2"
+    width={500}
+    height={2000}
+    className="object-contain scale-x-[-1] relative z-10 -mr-96"
+  />
 
-                {/* Center worker */}
-                <Image
-                  src="/images/home/topsection3.png"
-                  alt="Worker 1"
-                  width={500}
-                  height={2000}
-                  className="object-contain relative z-20"
-                />
+  {/* Center worker */}
+  <Image
+    src="/images/home/topsection3.png"
+    alt="Worker 1"
+    width={600}
+    height={2200}
+    className="object-contain relative z-20"
+  />
 
-                {/* Right worker */}
-                <Image
-                  src="/images/home/topsection5.png"
-                  alt="Worker 3"
-                  width={500}
-                  height={2000}
-                  className="object-contain relative z-10 -ml-80"
-                />
-              </div>
+  {/* Right worker */}
+  <Image
+    src="/images/home/topsection5.png"
+    alt="Worker 3"
+    width={500}
+    height={2000}
+    className="object-contain relative z-10 -ml-96"
+  />
+
+</div>
             </div>
-          </div>
-        </div>
+
       </section>
     </div>
 
-    {/* What we're offering */}
-    <section className="w-full py-12 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">What we're offering</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {/* Residential Cleaning */}
-          <div className="bg-yellow-50 rounded-lg p-6 shadow flex flex-col items-center">
-            <Image src="/images/home/secondsection.jpg" alt="Residential Cleaning" width={80} height={80} className="mb-4 rounded-full" />
-            <h3 className="font-semibold text-lg mb-2">Residential Cleaning</h3>
-            <ul className="text-sm text-gray-600 mb-2">
-              <li>• Homes</li>
-              <li>• Apartments</li>
-              <li>• Villas</li>
-            </ul>
-            <a href="#" className="text-blue-600 text-sm font-medium hover:underline">Learn More</a>
-          </div>
-          {/* Commercial Cleaning */}
-          <div className="bg-yellow-50 rounded-lg p-6 shadow flex flex-col items-center">
-            <Image src="/images/home/secondsection2.jpg" alt="Commercial Cleaning" width={80} height={80} className="mb-4 rounded-full" />
-            <h3 className="font-semibold text-lg mb-2">Commercial Cleaning</h3>
-            <ul className="text-sm text-gray-600 mb-2">
-              <li>• Offices</li>
-              <li>• Shops</li>
-              <li>• Hotels</li>
-            </ul>
-            <a href="#" className="text-blue-600 text-sm font-medium hover:underline">Learn More</a>
-          </div>
-          {/* Deep Cleaning */}
-          <div className="bg-yellow-50 rounded-lg p-6 shadow flex flex-col items-center">
-            <Image src="/images/home/third.png" alt="Deep Cleaning" width={80} height={80} className="mb-4 rounded-full" />
-            <h3 className="font-semibold text-lg mb-2">Deep Cleaning</h3>
-            <ul className="text-sm text-gray-600 mb-2">
-              <li>• Kitchens</li>
-              <li>• Bathrooms</li>
-              <li>• All rooms</li>
-            </ul>
-            <a href="#" className="text-blue-600 text-sm font-medium hover:underline">Learn More</a>
-          </div>
-          {/* Post-construction Cleaning */}
-          <div className="bg-yellow-50 rounded-lg p-6 shadow flex flex-col items-center">
-            <Image src="/images/home/third2.png" alt="Post-construction Cleaning" width={80} height={80} className="mb-4 rounded-full" />
-            <h3 className="font-semibold text-lg mb-2">Post-construction Cleaning</h3>
-            <ul className="text-sm text-gray-600 mb-2">
-              <li>• New Renovation</li>
-              <li>• Site Handover</li>
-              <li>• Move-in Ready</li>
-            </ul>
-            <a href="#" className="text-blue-600 text-sm font-medium hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div className="flex justify-center mt-8">
-          <button className="bg-blue-600 text-white px-6 py-2 rounded font-semibold hover:bg-blue-700 transition">See All</button>
-        </div>
-      </div>
-    </section>
 
-    {/* Testimonials */}
-    <section className="w-full py-12 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 flex items-center justify-center gap-2">
-          <span className="text-yellow-400 text-3xl">&#10077;</span> Testimonials
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {/* Testimonial 1 */}
-          <div className="bg-gray-50 rounded-lg p-6 shadow flex flex-col gap-2">
-            <p className="text-gray-700">"Excellent service! My home has never looked better. Highly recommend Cool Technical Services!"</p>
-            <span className="text-sm text-gray-500 font-medium">- Sarah K.</span>
+
+
+{/* New section with secondsection2.jpg, same size as above workers section */}
+<div
+  className="w-full relative flex flex-col items-center min-h-[700px] py-12 overflow-x-hidden"
+  style={{
+    backgroundColor: '#fff',
+  }}
+>
+  {/* Dotted SVG background pattern */}
+  <svg className="absolute inset-0 w-full h-full z-0" style={{pointerEvents: 'none'}} width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.5" fill="#E5E7EB" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dots)" />
+  </svg>
+  {/* Heading */}
+  <div className="relative z-10 flex flex-col items-center w-full mb-10">
+    <h2 className="flex items-center justify-center gap-2 text-5xl font-extrabold text-black text-center mb-2">
+      What we're offering
+      <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="14" x2="130" y2="14" stroke="#FEC00D" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="130,7 140,14 130,21" fill="#FEC00D" />
+      </svg>
+    </h2>
+  </div>
+  {/* Cards flow layout with SVG arrows */}
+  <div className="relative z-10 w-full max-w-6xl mx-auto min-h-[520px] flex flex-col items-center">
+    {/* SVG Arrows connecting cards (thinner, lighter, with dot) */}
+    <svg className="absolute left-[22%] top-[110px] hidden lg:block" width="220" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="40" r="4" fill="#7CFF6B"/><path d="M4 40 Q110 0 220 40" stroke="#B6FFB0" strokeWidth="2" fill="none" markerEnd="url(#arrowhead1)"/><defs><marker id="arrowhead1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 L2,4 L0,0" fill="#B6FFB0"/></marker></defs></svg>
+    <svg className="absolute left-[38%] top-[250px] hidden lg:block" width="220" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="40" r="4" fill="#7CFF6B"/><path d="M4 40 Q110 80 220 40" stroke="#B6FFB0" strokeWidth="2" fill="none" markerEnd="url(#arrowhead2)"/><defs><marker id="arrowhead2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 L2,4 L0,0" fill="#B6FFB0"/></marker></defs></svg>
+    <svg className="absolute left-[62%] top-[110px] hidden lg:block" width="220" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="40" r="4" fill="#7CFF6B"/><path d="M4 40 Q110 0 220 40" stroke="#B6FFB0" strokeWidth="2" fill="none" markerEnd="url(#arrowhead3)"/><defs><marker id="arrowhead3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 L2,4 L0,0" fill="#B6FFB0"/></marker></defs></svg>
+    {/* Cards container with staggered layout */}
+    <div className="w-full h-[420px] relative">
+      {/* Card 1 */}
+      <div className="absolute left-0 top-0 w-[300px] h-[300px]">
+        <div className="relative rounded-[24px] shadow-lg p-8 flex flex-col gap-3 w-full h-full border border-gray-100 overflow-hidden bg-white" style={{backgroundImage: "url('/images/home/secondsection.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-white opacity-80 pointer-events-none rounded-[24px]" style={{zIndex: 1}} />
+          {/* Icon top-left (solid house) */}
+          <div className="absolute top-6 left-6 z-10">
+            <svg width="36" height="36" fill="#FEC00D" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v9a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4h-4v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
           </div>
-          {/* Testimonial 2 */}
-          <div className="bg-gray-50 rounded-lg p-6 shadow flex flex-col gap-2">
-            <p className="text-gray-700">"Professional, punctual, and thorough. The team was friendly and efficient."</p>
-            <span className="text-sm text-gray-500 font-medium">- Ahmed R.</span>
+          {/* Number badge top-right (quarter circle) */}
+          <div className="absolute -top-4 right-0 z-10">
+            <div className="w-16 h-16 bg-[#FEC00D] rounded-br-[64px] flex items-end justify-end">
+              <span className="text-white font-bold text-lg mr-3 mb-2">01</span>
+            </div>
           </div>
-          {/* Testimonial 3 */}
-          <div className="bg-gray-50 rounded-lg p-6 shadow flex flex-col gap-2">
-            <p className="text-gray-700">"I booked a deep cleaning and was amazed by the results. Will use again!"</p>
-            <span className="text-sm text-gray-500 font-medium">- Priya S.</span>
+          <div className="relative z-10 mt-12">
+            <h3 className="font-semibold text-xl mb-1">Residential Cleaning</h3>
+            <ul className="text-base text-gray-700 mb-2 list-disc pl-4">
+              <li>Homes</li>
+              <li>Apartments</li>
+              <li>Villas</li>
+            </ul>
+            <a href="#" className="text-blue-600 text-base font-medium hover:underline flex items-center gap-1 absolute bottom-6 right-6">Learn More <svg width="16" height="16" fill="#146EB4" viewBox="0 0 24 24"><polygon points="9,6 18,12 9,18" /></svg></a>
           </div>
-        </div>
-        <div className="flex justify-center mb-8">
-          <button className="text-blue-600 font-medium hover:underline">Submit your feedback</button>
-        </div>
-        <div className="flex justify-center">
-          <Image src="/images/home/third3.jpg" alt="Thumbs Up" width={120} height={120} className="rounded-full" />
         </div>
       </div>
-    </section>
+      {/* Card 2 */}
+      <div className="absolute left-[22%] top-[140px] w-[300px] h-[300px]">
+        <div className="relative rounded-[24px] shadow-lg p-8 flex flex-col gap-3 w-full h-full border border-gray-100 overflow-hidden bg-white" style={{backgroundImage: "url('/images/home/secondsection.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-white opacity-80 pointer-events-none rounded-[24px]" style={{zIndex: 1}} />
+          {/* Icon top-left (solid menu) */}
+          <div className="absolute top-6 left-6 z-10">
+            <svg width="36" height="36" fill="#FEC00D" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="2" rx="1"/><rect x="3" y="11" width="18" height="2" rx="1"/><rect x="3" y="16" width="18" height="2" rx="1"/></svg>
+          </div>
+          {/* Number badge top-right (quarter circle) */}
+          <div className="absolute -top-4 right-0 z-10">
+            <div className="w-16 h-16 bg-[#FEC00D] rounded-br-[64px] flex items-end justify-end">
+              <span className="text-white font-bold text-lg mr-3 mb-2">02</span>
+            </div>
+          </div>
+          <div className="relative z-10 mt-12">
+            <h3 className="font-semibold text-xl mb-1">Commercial Cleaning</h3>
+            <ul className="text-base text-gray-700 mb-2 list-disc pl-4">
+              <li>Offices</li>
+              <li>Shops</li>
+              <li>Malls</li>
+            </ul>
+            <a href="#" className="text-blue-600 text-base font-medium hover:underline flex items-center gap-1 absolute bottom-6 right-6">Learn More <svg width="16" height="16" fill="#146EB4" viewBox="0 0 24 24"><polygon points="9,6 18,12 9,18" /></svg></a>
+          </div>
+        </div>
+      </div>
+      {/* Card 3 */}
+      <div className="absolute left-[58%] top-0 w-[300px] h-[300px]">
+        <div className="relative rounded-[24px] shadow-lg p-8 flex flex-col gap-3 w-full h-full border border-gray-100 overflow-hidden bg-white" style={{backgroundImage: "url('/images/home/secondsection.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-white opacity-80 pointer-events-none rounded-[24px]" style={{zIndex: 1}} />
+          {/* Icon top-left (solid mop/cleaning) */}
+          <div className="absolute top-6 left-6 z-10">
+            <svg width="36" height="36" fill="#FEC00D" viewBox="0 0 24 24"><path d="M19.5 3.5l-15 15M16 19l3 3M19 16l3 3M3 21h6M21 3l-7.5 7.5" stroke="#FEC00D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
+          </div>
+          {/* Number badge top-right (quarter circle) */}
+          <div className="absolute -top-4 right-0 z-10">
+            <div className="w-16 h-16 bg-[#FEC00D] rounded-br-[64px] flex items-end justify-end">
+              <span className="text-white font-bold text-lg mr-3 mb-2">03</span>
+            </div>
+          </div>
+          <div className="relative z-10 mt-12">
+            <h3 className="font-semibold text-xl mb-1">Deep Cleaning</h3>
+            <ul className="text-base text-gray-700 mb-2 list-disc pl-4">
+              <li>Intense full-space cleaning.</li>
+            </ul>
+            <a href="#" className="text-blue-600 text-base font-medium hover:underline flex items-center gap-1 absolute bottom-6 right-6">Learn More <svg width="16" height="16" fill="#146EB4" viewBox="0 0 24 24"><polygon points="9,6 18,12 9,18" /></svg></a>
+          </div>
+        </div>
+      </div>
+      {/* Card 4 */}
+      <div className="absolute left-[90%] top-[170px] w-[300px] h-[300px]">
+        <div className="relative rounded-[24px] shadow-lg p-8 flex flex-col gap-3 w-full h-full border border-gray-100 overflow-hidden bg-white" style={{backgroundImage: "url('/images/home/secondsection.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-white opacity-80 pointer-events-none rounded-[24px]" style={{zIndex: 1}} />
+          {/* Icon top-left (solid tools) */}
+          <div className="absolute top-6 left-6 z-10">
+            <svg width="36" height="36" fill="#FEC00D" viewBox="0 0 24 24"><path d="M21.7 20.3a1 1 0 0 1-1.4 0l-2.1-2.1a1 1 0 0 1 0-1.4l.3-.3-2.8-2.8a5.5 5.5 0 0 1-6.7-7.9l2.1 2.1a1 1 0 0 0 1.4-1.4L7.2 4.7a1 1 0 0 1 1.4-1.4l2.1 2.1a1 1 0 0 1 0 1.4l-.3.3 2.8 2.8a5.5 5.5 0 0 1 6.7 7.9l-2.1-2.1a1 1 0 0 0-1.4 1.4l2.1 2.1a1 1 0 0 1 0 1.4z"/></svg>
+          </div>
+          {/* Number badge top-right (quarter circle) */}
+          <div className="absolute -top-4 right-0 z-10">
+            <div className="w-16 h-16 bg-[#FEC00D] rounded-br-[64px] flex items-end justify-end">
+              <span className="text-white font-bold text-lg mr-3 mb-2">04</span>
+            </div>
+          </div>
+          <div className="relative z-10 mt-12">
+            <h3 className="font-semibold text-xl mb-1">Post-Construction Cleaning</h3>
+            <ul className="text-base text-gray-700 mb-2 list-disc pl-4">
+              <li>After renovation or construction.</li>
+            </ul>
+            <a href="#" className="text-blue-600 text-base font-medium hover:underline flex items-center gap-1 absolute bottom-6 right-6">Learn More <svg width="16" height="16" fill="#146EB4" viewBox="0 0 24 24"><polygon points="9,6 18,12 9,18" /></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/* See All Button */}
+  <div className="relative z-10 flex justify-center mt-16">
+    <button
+      className="relative flex items-center w-[120px] h-[44px] rounded-[8px] shadow-md overflow-hidden border-none p-0 cursor-pointer"
+      style={{ boxShadow: '0 2px 8px 0 rgba(20, 110, 180, 0.10)' }}
+      type="button"
+      onClick={() => (window.location.href = '/services')}
+    >
+      {/* Blue diagonal left side */}
+      <span
+        className="absolute left-0 top-0 h-full w-[75%] flex items-center pl-5 text-white font-bold text-sm"
+        style={{
+          background: '#146EB4',
+          clipPath: 'polygon(0 0, 95% 0, 80% 100%, 0% 100%)',
+          zIndex: 1,
+        }}
+      >
+        See All
+      </span>
+      {/* White diagonal right side with blue arrow */}
+      <span
+        className="absolute right-0 top-0 h-full w-[40%] flex items-center justify-center"
+        style={{
+          background: '#ffffff',
+          clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)',
+          zIndex: 2,
+        }}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#146EB4" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="9,6 18,12 9,18" />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+
+
+
+    {/* Third section with background and side images */}
+    <div className="w-full relative flex items-center min-h-[700px] justify-center" style={{ backgroundImage: `url('/images/home/third3.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Left side image */}
+      <img src="/images/home/third2.png" alt="Left Decoration" className="absolute left-0 bottom-0 h-2/3 object-contain z-10" style={{ maxWidth: '220px' }} />
+      {/* Right side image */}
+      <img src="/images/home/third.png" alt="Right Decoration" className="absolute right-0 bottom-0 h-2/3 object-contain z-10" style={{ maxWidth: '220px' }} />
+      {/* Center content placeholder */}
+      <div className="relative z-20 w-full flex flex-col items-center justify-center">
+        {/* 4 Testimonial Cards in a responsive grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto">
+          {[1,2,3,4].map((n) => (
+            <div key={n} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-5 min-w-[260px] max-w-sm mx-auto" style={{ boxShadow: '0 4px 20px 0 rgba(0,0,0,0.10)' }}>
+              {/* Quote Icon */}
+              <div className="text-yellow-400 text-xl mb-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 36 36"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
+              </div>
+              {/* Testimonial Text */}
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Sorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+              </p>
+              {/* User Info */}
+              <div className="flex items-center gap-3 mt-1">
+                <img src="/images/avatar.png" alt="Ahmed Khan" className="w-8 h-8 rounded-full border-2 border-blue-100" />
+                <div>
+                  <div className="font-semibold text-[#2196F3] text-sm">Ahmed Khan</div>
+                  <div className="text-gray-400 text-xs">Client</div>
+                </div>
+              </div>
+              {/* Stars */}
+              <div className="flex items-center gap-0.5 mt-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="14" height="14" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
     {/* Footer */}
-    <footer className="w-full bg-[#fff9e6] pt-8 px-4">
+    <footer className="w-full bg-[#fff9e6] pt-14 px-8 text-base">
       <div className="max-w-7xl mx-auto">
         {/* Top section with Follow Us and Newsletter */}
         <div className="flex flex-col md:flex-row justify-between mb-4">
@@ -345,7 +480,7 @@ export default function Home() {
           </div>
           <div>
             <h4 className="font-medium mb-4">Services</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-10">
               <li>Residential Cleaning</li>
               <li>Commercial Cleaning</li>
               <li>Deep Cleaning</li>
