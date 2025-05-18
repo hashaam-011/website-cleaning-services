@@ -574,7 +574,7 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-
+//new
        {/* Footer */}
        <footer className="w-full bg-[#fff9e6] pt-8 px-4">
       <div className="max-w-7xl mx-auto">
