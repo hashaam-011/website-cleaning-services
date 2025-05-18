@@ -29,7 +29,7 @@ export default function Home() {
             <Image
               src="/images/home/topsection2.png"
               alt="Logo"
-              width={80}
+              width={90}
               height={48}
               className="rounded-full"
             />
@@ -416,12 +416,12 @@ export default function Home() {
         <rect width="100%" height="100%" fill="url(#dots-diag)" />
       </svg>
       {/* Large Yellow Quote Icon */}
-      <div className="absolute left-4 top-4 z-10 flex flex-row items-start gap-0">
-        {/* Filled double quotation marks, much bigger and closer */}
+      <div className="absolute left-4 top-4 z-10 flex flex-row items-start gap-4">
+        {/* Filled double quotation marks, much bigger and spaced */}
         <svg width="120" height="120" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M55 20c-6 0-10 4-10 10v10c0 6 4 10 10 10h5l-2-5c-2 0-3-2-3-5v-5h5V20h-5z" fill="#FEC00D"/>
         </svg>
-        <svg width="120" height="120" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{transform: 'scaleX(-1)', marginLeft: '-24px'}}>
+        <svg width="120" height="120" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{transform: 'scaleX(-1)'}}>
           <path d="M55 20c-6 0-10 4-10 10v10c0 6 4 10 10 10h5l-2-5c-2 0-3-2-3-5v-5h5V20h-5z" fill="#FEC00D"/>
         </svg>
       </div>
@@ -445,7 +445,7 @@ export default function Home() {
           height={640}
           className="object-contain"
         />
-      </div>
+        </div>
 
       {/* Heading */}
       <div className="relative z-10 flex flex-col items-center w-full mb-10 mt-4">
@@ -463,23 +463,23 @@ export default function Home() {
       <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 px-4">
         {/* Card 1 */}
         <div className="relative">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col gap-4 border border-gray-100" style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.12)' }}>
-            <div className="text-yellow-400 text-2xl mb-1">
-              <svg width="24" height="20" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
+          <div className="bg-white shadow-lg p-4 flex flex-col gap-2 border border-gray-100 rounded-tl-2xl rounded-br-2xl" style={{ boxShadow: '0 4px 20px 0 rgba(0,0,0,0.10)' }}>
+            <div className="text-yellow-400 text-lg mb-0.5">
+              <svg width="20" height="16" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-sm leading-relaxed">
               "The team at Cool Technical Services exceeded our expectations. Their attention to detail and professionalism made our office sparkle. Highly recommended!"
             </p>
-            <div className="flex items-center gap-3 mt-1">
-              <img src="/images/home/img4.png" alt="Sarah Johnson" className="w-8 h-8 rounded-full border-2 border-blue-100" />
+            <div className="flex items-center gap-2 mt-0.5">
+              <img src="/images/home/img4.png" alt="Sarah Johnson" className="w-6 h-6 rounded-full border-2 border-blue-100" />
               <div>
-                <div className="font-semibold text-[#2196F3] text-base">Sarah Johnson</div>
-                <div className="text-gray-400 text-xs">Office Manager</div>
+                <div className="font-semibold text-[#2196F3] text-xs">Sarah Johnson</div>
+                <div className="text-gray-400 text-[10px]">Office Manager</div>
               </div>
             </div>
-            <div className="flex items-center gap-1 mt-1">
+            <div className="flex items-center gap-0.5 mt-0.5">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} width="16" height="16" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
+                <svg key={i} width="12" height="12" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
               ))}
             </div>
           </div>
@@ -489,68 +489,68 @@ export default function Home() {
         </div>
 
         {/* Card 2 */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col gap-4 border border-gray-100" style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.12)' }}>
-          <div className="text-yellow-400 text-2xl mb-1">
-            <svg width="24" height="20" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
+        <div className="bg-white shadow-lg p-4 flex flex-col gap-2 border border-gray-100 rounded-tr-2xl rounded-bl-2xl" style={{ boxShadow: '0 4px 20px 0 rgba(0,0,0,0.10)' }}>
+          <div className="text-yellow-400 text-lg mb-0.5">
+            <svg width="20" height="16" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
           </div>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 text-sm leading-relaxed">
             "Their deep cleaning service transformed our home. The team was thorough, efficient, and left everything spotless. Will definitely use their services again!"
           </p>
-          <div className="flex items-center gap-3 mt-1">
-            <img src="/images/home/img3.png" alt="Michael Chen" className="w-8 h-8 rounded-full border-2 border-blue-100" />
+          <div className="flex items-center gap-2 mt-0.5">
+            <img src="/images/home/img3.png" alt="Michael Chen" className="w-6 h-6 rounded-full border-2 border-blue-100" />
             <div>
-              <div className="font-semibold text-[#2196F3] text-base">Michael Chen</div>
-              <div className="text-gray-400 text-xs">Homeowner</div>
+              <div className="font-semibold text-[#2196F3] text-xs">Michael Chen</div>
+              <div className="text-gray-400 text-[10px]">Homeowner</div>
             </div>
           </div>
-          <div className="flex items-center gap-1 mt-1">
+          <div className="flex items-center gap-0.5 mt-0.5">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} width="16" height="16" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
+              <svg key={i} width="12" height="12" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
             ))}
           </div>
         </div>
 
         {/* Card 3 */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col gap-4 border border-gray-100" style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.12)' }}>
-          <div className="text-yellow-400 text-2xl mb-1">
-            <svg width="24" height="20" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
+        <div className="bg-white shadow-lg p-4 flex flex-col gap-2 border border-gray-100 rounded-tl-2xl rounded-br-2xl" style={{ boxShadow: '0 4px 20px 0 rgba(0,0,0,0.10)' }}>
+          <div className="text-yellow-400 text-lg mb-0.5">
+            <svg width="20" height="16" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
           </div>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 text-sm leading-relaxed">
             "The post-construction cleaning was outstanding. They removed all dust and debris, leaving our newly renovated space immaculate. Professional and reliable!"
           </p>
-          <div className="flex items-center gap-3 mt-1">
-            <img src="/images/home/img2.png" alt="Emma Rodriguez" className="w-8 h-8 rounded-full border-2 border-blue-100" />
+          <div className="flex items-center gap-2 mt-0.5">
+            <img src="/images/home/img2.png" alt="Emma Rodriguez" className="w-6 h-6 rounded-full border-2 border-blue-100" />
             <div>
-              <div className="font-semibold text-[#2196F3] text-base">Emma Rodriguez</div>
-              <div className="text-gray-400 text-xs">Property Developer</div>
+              <div className="font-semibold text-[#2196F3] text-xs">Emma Rodriguez</div>
+              <div className="text-gray-400 text-[10px]">Property Developer</div>
             </div>
           </div>
-          <div className="flex items-center gap-1 mt-1">
+          <div className="flex items-center gap-0.5 mt-0.5">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} width="16" height="16" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
+              <svg key={i} width="12" height="12" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
             ))}
           </div>
         </div>
 
         {/* Card 4 */}
         <div className="relative">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col gap-4 border border-gray-100" style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.12)' }}>
-            <div className="text-yellow-400 text-2xl mb-1">
-              <svg width="24" height="20" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
+          <div className="bg-white shadow-lg p-4 flex flex-col gap-2 border border-gray-100 rounded-tr-2xl rounded-bl-2xl" style={{ boxShadow: '0 4px 20px 0 rgba(0,0,0,0.10)' }}>
+            <div className="text-yellow-400 text-lg mb-0.5">
+              <svg width="20" height="16" fill="none" viewBox="0 0 36 26"><path d="M10 14h4v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4zm16 0h4v-4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v4a8 8 0 0 0 8 8v-4a4 4 0 0 1-4-4v-4z" fill="#FEC00D"/></svg>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-sm leading-relaxed">
               "Regular commercial cleaning service has been a game-changer for our business. Consistent quality and excellent customer service. Highly recommended!"
             </p>
-            <div className="flex items-center gap-3 mt-1">
-              <img src="/images/home/img1.png" alt="David Wilson" className="w-8 h-8 rounded-full border-2 border-blue-100" />
+            <div className="flex items-center gap-2 mt-0.5">
+              <img src="/images/home/img1.png" alt="David Wilson" className="w-6 h-6 rounded-full border-2 border-blue-100" />
               <div>
-                <div className="font-semibold text-[#2196F3] text-base">David Wilson</div>
-                <div className="text-gray-400 text-xs">Business Owner</div>
+                <div className="font-semibold text-[#2196F3] text-xs">David Wilson</div>
+                <div className="text-gray-400 text-[10px]">Business Owner</div>
               </div>
             </div>
-            <div className="flex items-center gap-1 mt-1">
+            <div className="flex items-center gap-0.5 mt-0.5">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} width="16" height="16" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
+                <svg key={i} width="12" height="12" fill="#FEC00D" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36"/></svg>
               ))}
             </div>
           </div>
