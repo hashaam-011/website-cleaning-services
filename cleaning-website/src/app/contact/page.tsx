@@ -2,53 +2,149 @@
 
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import mouse from '@/public/images/services/mouse.png';
 
-export default function Contact() {
+export default function ContactUs() {
   const pathname = usePathname();
 
   return (
-    <div className="font-sans bg-[#F8F8F8] text-[#222] min-h-screen flex flex-col">
-      {/* Header (reuse from main site) */}
-      <header className="w-full bg-white z-20 border-b">
-        <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
-          <div className="flex items-center gap-2">
-            <Image src="/images/home/topsection2.png" alt="Logo" width={40} height={40} className="rounded-full" />
-            <span className="font-bold text-lg text-[#222]">Cool Technical Services</span>
+    <div className="font-sans bg-white text-[#222]">
+      {/* Container for seamless header and hero section */}
+      <div className="w-full relative overflow-hidden min-h-[750px] py-12">
+        {/* Background image with fade */}
+        <div className="absolute inset-0 flex w-full h-full z-0 bg-white">
+          <div className="relative  h-full">
+            <Image
+              src="/images/pricing/1.jpg"
+              alt="Background"
+              fill
+              className="object-cover opacity-50"
+            />
           </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <a href="/" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/' ? 'underline text-[#00C853]' : ''}`}>Home</a>
-            <a href="/services" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/services' ? 'underline text-[#00C853]' : ''}`}>Services</a>
-            <a href="/packages" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/packages' ? 'underline text-[#00C853]' : ''}`}>Packages</a>
-            <a href="/pricing" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/pricing' ? 'underline text-[#00C853]' : ''}`}>Pricing</a>
-            <a href="/gallery" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/gallery' ? 'underline text-[#00C853]' : ''}`}>Gallery</a>
-            <a href="/about" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/about' ? 'underline text-[#00C853]' : ''}`}>About Us</a>
-            <a href="/contact" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/contact' ? 'underline text-[#00C853]' : ''}`}>Contact Us</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <a href="tel:8006442" className="text-[#00C853] font-bold text-sm">
-              Call Us Now - Toll Free<br />8006442
-            </a>
+          <div className="relative flex-1 h-full">
+            <Image
+              src="/images/pricing/3.jpg"
+              alt="Overlay 2"
+              fill
+              className="object-cover opacity-40"
+            />
+          </div>
+          <div className="relative flex-1 h-full">
+            <Image
+              src="/images/pricing/4.jpg"
+              alt="Overlay 3"
+              fill
+              className="object-cover opacity-30"
+            />
+          </div>
+          <div className="relative flex-1 h-full">
+            <Image
+              src="/images/packages/3.jpg"
+              alt="Overlay 4"
+              fill
+              className="object-cover opacity-30"
+            />
           </div>
         </div>
-      </header>
 
-      {/* Hero/Contact Info Section */}
-      <section className="w-full bg-white pt-10 pb-6 px-4 flex flex-col md:flex-row items-center text-center md:text-left border-b relative overflow-hidden">
-        <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start mb-8 md:mb-0">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Contact <span className="text-yellow-400">Us</span></h1>
-          <p className="max-w-lg text-gray-700 mb-6">
-            Have questions or want to book a service? Reach out to us and our team will get back to you as soon as possible. We're here to help you keep your space spotless and stress-free!
-          </p>
-          <div className="text-left space-y-2">
-            <div><span className="font-bold">Phone:</span> <a href="tel:+971501234567" className="text-blue-600 hover:underline">+971 50 123 4567</a></div>
-            <div><span className="font-bold">Email:</span> <a href="mailto:info@cooltechservices.com" className="text-blue-600 hover:underline">info@cooltechservices.com</a></div>
-            <div><span className="font-bold">Location:</span> Dubai, UAE</div>
+        {/* Navbar/Header - seamless with homepage */}
+        <header className="w-full absolute top-0 left-0 z-20">
+          <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/home/topsection2.png"
+                alt="Logo"
+                width={80}
+                height={48}
+                className="rounded-full"
+              />
+            </div>
+            <nav className="hidden md:flex gap-6 text-base font-medium">
+              <a
+                href="/"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/' ? 'underline text-[#00C853]' : ''}`}
+              >
+                Home
+              </a>
+              <a
+                href="/services"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/services' ? 'underline text-[#00C853]' : ''}`}
+              >
+                Services
+              </a>
+              <a
+                href="/packages"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/packages' ? 'underline text-[#00C853]' : ''}`}
+              >
+                Packages
+              </a>
+              <a
+                href="/pricing"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/pricing' ? 'underline text-[#00C853]' : ''}`}
+              >
+                Pricing
+              </a>
+              <a
+                href="/gallery"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/gallery' ? 'underline text-[#00C853]' : ''}`}
+              >
+                Gallery
+              </a>
+              <a
+                href="/about"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/about' ? 'underline text-[#00C853]' : ''}`}
+              >
+                About Us
+              </a>
+              <a
+                href="/contact"
+                className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/contact' ? 'underline text-[#00C853]' : ''}`}
+              >
+                Contact Us
+              </a>
+            </nav>
+            <div className="flex items-center gap-2">
+              <div className="h-10 border-l border-black mx-14"></div> {/* Vertical Line */}
+              <a
+                href="tel:8006442"
+                className="text-[#5BF014] font-bold text-sm flex items-center gap-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                  />
+                </svg>
+                Call Us Now - Toll Free<br />8006442
+              </a>
+            </div>
           </div>
+        </header>
+
+          {/* Hero/Top Section Content (customize as needed) */}
+          <section className="w-full relative flex flex-col items-center justify-center min-h-[400px] pt-40 pb-20 z-10">
+            <h1 className="text-6xl md:text-8xl font-extrabold mb-6 text-center">
+          <span className="text-black">Pricing</span>
+            </h1>
+            <p className="max-w-4xl mx-auto text-gray-700 mb-10 text-center text-xl md:text-2xl">
+            Our pricing is designed with flexibility and transparency in mind. Whether you need a quick clean or full-time help, we offer affordable packages that fit your schedule and budget—without compromising on quality. Explore our rates and choose the plan that works best for your space.            </p>
+            <div className="flex flex-col items-center mt-90">
+              <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
+              <div className="w-8 h-8   flex items-center justify-center">
+              <img src="/images/services/mouse.png" alt="mouse" />
+              </div>
+            </div>
+          </section>
         </div>
-        <div className="md:w-1/2 flex justify-center">
-          <Image src="/images/contact/7e54ffac35c9b8ef3bea4ef94adddee189476d05.png" alt="Contact Illustration" width={400} height={320} className="rounded-xl object-cover shadow-lg" />
-        </div>
-      </section>
+
 
       {/* Contact Form Section */}
       <section className="w-full py-12 px-4 bg-white flex flex-col items-center">
