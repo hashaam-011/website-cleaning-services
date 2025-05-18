@@ -1,6 +1,11 @@
+"use client";
+
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 export default function About() {
+  const pathname = usePathname();
+
   return (
     <div className="font-sans bg-[#F8F8F8] text-[#222] min-h-screen flex flex-col">
       {/* Header (reuse from main site) */}
@@ -11,13 +16,13 @@ export default function About() {
             <span className="font-bold text-lg text-[#222]">Cool Technical Services</span>
           </div>
           <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <a href="/" className="text-[#222] hover:text-yellow-500">Home</a>
-            <a href="/services" className="text-[#222] hover:text-yellow-500">Services</a>
-            <a href="/packages" className="text-[#222] hover:text-yellow-500">Packages</a>
-            <a href="/pricing" className="text-[#222] hover:text-yellow-500">Pricing</a>
-            <a href="/gallery" className="text-[#222] hover:text-yellow-500">Gallery</a>
-            <a href="/about" className="text-[#222] hover:text-yellow-500 font-bold underline">About Us</a>
-            <a href="/contact" className="text-[#222] hover:text-yellow-500">Contact Us</a>
+            <a href="/" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/' ? 'underline text-[#00C853]' : ''}`}>Home</a>
+            <a href="/services" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/services' ? 'underline text-[#00C853]' : ''}`}>Services</a>
+            <a href="/packages" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/packages' ? 'underline text-[#00C853]' : ''}`}>Packages</a>
+            <a href="/pricing" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/pricing' ? 'underline text-[#00C853]' : ''}`}>Pricing</a>
+            <a href="/gallery" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/gallery' ? 'underline text-[#00C853]' : ''}`}>Gallery</a>
+            <a href="/about" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/about' ? 'underline text-[#00C853]' : ''}`}>About Us</a>
+            <a href="/contact" className={`text-[#222] hover:underline hover:text-[#00C853] ${pathname === '/contact' ? 'underline text-[#00C853]' : ''}`}>Contact Us</a>
           </nav>
           <div className="flex items-center gap-2">
             <a href="tel:8006442" className="text-[#00C853] font-bold text-sm">
