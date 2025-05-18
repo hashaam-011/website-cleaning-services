@@ -243,7 +243,7 @@ export default function Home() {
     {/* Cards container with staggered layout */}
     <div className="w-full h-[420px] relative">
       {/* Card 1 */}
-      <div className="absolute left-0 top-0 w-[300px] h-[300px]">
+      <div className="absolute left-[1%] top-0 w-[300px] h-[300px]">
         <div className="relative rounded-[24px] shadow-lg p-8 flex flex-col gap-3 w-full h-full border border-gray-100 overflow-hidden bg-white" style={{backgroundImage: "url('/images/home/secondsection.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center'}}>
           <div className="absolute inset-0 bg-white opacity-80 pointer-events-none rounded-[24px]" style={{zIndex: 1}} />
           {/* Icon top-left (solid house) */}
