@@ -11,7 +11,12 @@ export default function Gallery() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const totalSlides = 3
-  
+  const images = [
+    '/images/gallery/6.jpg',
+    '/images/gallery/4.jpg',
+    '/images/gallery/5.jpg',
+  ];
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
   }
@@ -50,7 +55,7 @@ export default function Gallery() {
             priority
           />
         </div>
-       
+
         </div>
 
         {/* Navbar/Header - seamless with homepage */}
@@ -151,8 +156,10 @@ export default function Gallery() {
           </section>
         </div>
 
-      {/* Glimpse of our work Section */}
-      <section className="w-full py-12 bg-white">
+        {/* Horizontal line after hero section */}
+        <div className="w-full border-t border-gray-200 my-8"></div>
+
+        <section className="w-full py-12 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">Our Team</h2>
@@ -163,62 +170,40 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
-          {/* Main carousel container */}
-          <div className="relative h-[400px] md:h-[450px] overflow-hidden rounded-lg">
-            {/* Slide 1 */}
-            <div
-              className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                currentSlide === 0 ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src="/placeholder.svg?height=450&width=800"
-                  alt="Team members in uniform with cleaning equipment"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Slide 2 */}
-            <div
-              className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                currentSlide === 1 ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src="/images/gallery/2.jpg"
-                  alt="Team member cleaning a window"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Slide 3 */}
-            <div
-              className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                currentSlide === 2 ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src="/placeholder.svg?height=450&width=800"
-                  alt="Team members organizing a space"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+        {/* Carousel with side images visible */}
+        <div className="relative flex items-center justify-center h-[400px] md:h-[450px] overflow-visible">
+          {/* Previous Slide (peek) */}
+          <div className="hidden md:block relative h-[70%] w-[20%] z-0 opacity-60 scale-90 blur-[1px] transition-all duration-500">
+            <Image
+              src={images[(currentSlide + totalSlides - 1) % totalSlides]}
+              alt="Previous team slide"
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+          {/* Main Slide */}
+          <div className="relative h-full w-[80vw] max-w-2xl z-10 shadow-xl rounded-lg overflow-hidden transition-all duration-500">
+            <Image
+              src={images[currentSlide]}
+              alt="Current team slide"
+              fill
+              className="object-cover"
+            />
+          </div>
+          {/* Next Slide (peek) */}
+          <div className="hidden md:block relative h-[70%] w-[20%] z-0 opacity-60 scale-90 blur-[1px] transition-all duration-500">
+            <Image
+              src={images[(currentSlide + 1) % totalSlides]}
+              alt="Next team slide"
+              fill
+              className="object-cover rounded-lg"
+            />
           </div>
 
           {/* Navigation arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+            className="absolute left-0 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-6 w-6 text-gray-800" />
@@ -226,35 +211,108 @@ export default function Gallery() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+            className="absolute right-0 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
             aria-label="Next slide"
           >
             <ChevronRight className="h-6 w-6 text-gray-800" />
           </button>
-
-          {/* Indicator dots */}
-          <div className="flex justify-center mt-4">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`h-2 w-2 mx-1 rounded-full ${currentSlide === index ? "bg-blue-500" : "bg-gray-300"}`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+        </div>
+        {/* Indicator dots */}
+        <div className="flex justify-center mt-4">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 w-2 mx-1 rounded-full ${currentSlide === index ? "bg-blue-500" : "bg-gray-300"}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
 
+    {/* Horizontal line after Our Team section */}
+    <div className="w-full border-t border-gray-200 my-8"></div>
 
       {/* work2 */  }
-      <section className="w-full bg-white py-10 px-4 border-b">
-        <h2 className="text-2xl font-bold text-center mb-2">A Glimpse of our work :)</h2>
-        <p className="text-center text-gray-700 mb-8 max-w-xl mx-auto">
-          Check out some of our favorite before-and-after moments as we turn spaces sparkling. The photos are 100% real, and we're eager to brighten up your place in a similar fashion. Trust, results matter!
-        </p>
-      </section>
+      <section className="w-full py-12 bg-white">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-4">A Glimpse of our work :)</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+          Check out some of our favorite moments in action! From cozy apartments to big office spaces, we've helped brighten up every kind of place. These snapshots show the love and detail we put into every clean, big or small.
+          </p>
+        </div>
+
+        {/* Carousel with side images visible */}
+        {(() => {
+          const workImages = [
+            '/images/gallery/9.png',
+            '/images/gallery/2.jpg',
+            '/images/gallery/10.png',
+          ];
+          return (
+            <div className="relative flex items-center justify-center h-[400px] md:h-[450px] overflow-visible">
+              {/* Previous Slide (peek) */}
+              <div className="hidden md:block relative h-[70%] w-[20%] z-0 opacity-60 scale-90 blur-[1px] transition-all duration-500">
+                <Image
+                  src={workImages[(currentSlide + totalSlides - 1) % totalSlides]}
+                  alt="Previous work slide"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              {/* Main Slide */}
+              <div className="relative h-full w-[80vw] max-w-2xl z-10 shadow-xl rounded-lg overflow-hidden transition-all duration-500">
+                <Image
+                  src={workImages[currentSlide]}
+                  alt="Current work slide"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              {/* Next Slide (peek) */}
+              <div className="hidden md:block relative h-[70%] w-[20%] z-0 opacity-60 scale-90 blur-[1px] transition-all duration-500">
+                <Image
+                  src={workImages[(currentSlide + 1) % totalSlides]}
+                  alt="Next work slide"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+
+              {/* Navigation arrows */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-0 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="h-6 w-6 text-gray-800" />
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="absolute right-0 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="h-6 w-6 text-gray-800" />
+              </button>
+            </div>
+          );
+        })()}
+        {/* Indicator dots */}
+        <div className="flex justify-center mt-4">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 w-2 mx-1 rounded-full ${currentSlide === index ? "bg-blue-500" : "bg-gray-300"}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
 
        {/* Footer */}
        <footer className="w-full bg-[#fff9e6] pt-8 px-4">
