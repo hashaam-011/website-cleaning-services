@@ -565,6 +565,102 @@ export default function Home() {
       </div>
     </section>
 
+    {/* Video Slider Section */}
+    <section className="w-full relative flex flex-col items-center min-h-[700px] py-16 bg-white overflow-x-hidden">
+      {/* Dotted Background */}
+      <svg className="absolute inset-0 w-full h-full z-0" style={{pointerEvents: 'none'}} width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="dots-video" x="0" y="0" width="24" height="24" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="#E5E7EB" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-video)" />
+      </svg>
+
+      {/* Heading */}
+      <div className="relative z-10 flex flex-col items-center w-full mb-10">
+        <div className="flex items-center gap-2 mb-2">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="6" width="24" height="16" rx="4" fill="#fff" stroke="#FEC00D" strokeWidth="2"/>
+            <path d="M16 22v4l4-4h-4z" fill="#FEC00D"/>
+            <text x="10" y="18" fontSize="10" fontWeight="bold" fill="#FEC00D">▶</text>
+          </svg>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-black text-center">Watch Our Work</h2>
+        </div>
+        <p className="text-gray-600 max-w-3xl mx-auto text-center mt-4">
+          See our cleaning experts in action! Watch these videos to understand our process and commitment to excellence.
+        </p>
+      </div>
+
+      {/* Video Carousel */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
+        <div className="relative h-[500px] overflow-hidden rounded-xl shadow-2xl">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
+            muted
+            loop
+          >
+            <source src="/vids/1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Video Thumbnails */}
+        <div className="flex justify-center gap-4 mt-6">
+          <button
+            className="w-24 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-yellow-400 transition-all"
+            onClick={() => {
+              const video = document.querySelector('video');
+              if (video) {
+                video.src = '/vids/1.mp4';
+                video.play();
+              }
+            }}
+          >
+            <video
+              className="w-full h-full object-cover"
+              src="/vids/1.mp4"
+              muted
+            />
+          </button>
+          <button
+            className="w-24 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-yellow-400 transition-all"
+            onClick={() => {
+              const video = document.querySelector('video');
+              if (video) {
+                video.src = '/vids/2.mp4';
+                video.play();
+              }
+            }}
+          >
+            <video
+              className="w-full h-full object-cover"
+              src="/vids/2.mp4"
+              muted
+            />
+          </button>
+          <button
+            className="w-24 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-yellow-400 transition-all"
+            onClick={() => {
+              const video = document.querySelector('video');
+              if (video) {
+                video.src = '/vids/3.mp4';
+                video.play();
+              }
+            }}
+          >
+            <video
+              className="w-full h-full object-cover"
+              src="/vids/3.mp4"
+              muted
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+
     {/* Footer */}
     <footer className="w-full bg-[#fff9e6] pt-14 px-8 text-base">
       <div className="max-w-7xl mx-auto">
@@ -620,7 +716,7 @@ export default function Home() {
             <ul className="space-y-2">
               <li><a href="/" className="hover:underline">Home</a></li>
               <li><a href="/services" className="hover:underline">Services</a></li>
-              <li><a href="/blog" className="hover:underline">Blog</a></li>
+              <li><a href="/packages" className="hover:underline">Packages</a></li>
               <li><a href="/about" className="hover:underline">About Us</a></li>
               <li><a href="/contact" className="hover:underline">Contact Us</a></li>
             </ul>
@@ -700,7 +796,7 @@ export default function Home() {
       </div>
 
       {/* Copyright bar */}
-      <div className="bg-gray-700 text-gray-300 text-center text-xs py-3 -mx-4 mt-6">
+      <div className="bg-gray-700 text-gray-300 text-center text-xs py-3 w-full mt-6">
         Copyright 2025 © PetPal All rights Reserved
       </div>
     </footer>
