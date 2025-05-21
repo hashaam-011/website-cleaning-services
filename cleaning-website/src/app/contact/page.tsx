@@ -8,6 +8,10 @@ import mouse from '@/public/images/services/mouse.png';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS with the public key
+emailjs.init("3kj8B_GfKuA4GwxSg");
 
 export default function ContactUs() {
   const pathname = usePathname();
@@ -21,21 +25,26 @@ export default function ContactUs() {
     const data = Object.fromEntries(formData);
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_z6q1w9j',
+        'template_06l2ywi',
+        {
+          to_email: 'hashaambusiness@gmail.com',
+          from_name: `${data.firstName} ${data.lastName}`,
+          from_email: data.email,
+          phone: data.contactNumber,
+          message: data.message
+        }
+      );
 
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        event.currentTarget.reset();
+      if (result.status === 200) {
+        setStatus('Message sent successfully! We will get back to you shortly.');
+        if (event.currentTarget) {
+          event.currentTarget.reset();
+        }
       } else {
-        setStatus(`Failed to send message: ${result.message || response.statusText}`);
+        setStatus(`Failed to send message: ${result.text}`);
       }
     } catch (error: any) {
       setStatus(`An error occurred: ${error.message}`);
@@ -68,15 +77,23 @@ export default function ContactUs() {
             Whether it's your home, office, or commercial space — we're here to bring back the shine! Our professional cleaning team is ready to handle the dirt so you don't have to. Reach out now to schedule a service or ask any questions — we're happy to help!
           </p>
           {/* Person image at bottom right */}
-          <div className="absolute -bottom-40 sm:-bottom-60 md:-bottom-80 right-0 md:right-180 z-20 hidden md:block">
+          <div className="absolute -bottom-40 sm:-bottom-60 md:-bottom-80 right-20 md:right-96 z-20 hidden md:block">
             <Image
               src="/images/contact/2.png"
               alt="Contact Person"
-              width={320}
-              height={420}
+              width={520}
+              height={120}
               className="object-contain drop-shadow-xl"
               priority
             />
+          </div>
+          {/* Mouse click button to scroll to bottom */}
+          <div className="flex flex-col items-center mt-10 cursor-pointer" onClick={() => {
+            const footer = document.getElementById('contact-footer');
+            if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+          }}>
+            <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
+            <img src="/images/services/mouse.png" alt="mouse" className="w-8 h-8" />
           </div>
         </section>
       </div>
@@ -322,7 +339,9 @@ export default function ContactUs() {
           ></iframe>
         </div>
       </section>
-      <Footer />
+      <div id="contact-footer">
+        <Footer />
+      </div>
     </div>
   );
 }

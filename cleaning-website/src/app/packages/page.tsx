@@ -138,10 +138,13 @@ export default function Packages() {
             </h1>
             <p className="max-w-4xl mx-auto text-gray-700 mb-10 text-center text-xl md:text-2xl">
             Discover a variety of cleaning packages designed to meet your unique needs — whether you need a quick touch-up, weekly care, or full-time support. Choose from hourly, weekly, or monthly plans, each crafted with convenience, quality, and attention to detail in mind. Our packages offer the perfect balance of flexibility and professionalism, ensuring your space stays spotless without the stress.          </p>
-            <div className="flex flex-col items-center mt-90">
+            <div className="flex flex-col items-center mt-90 cursor-pointer" onClick={() => {
+              const footer = document.getElementById('footer-packages');
+              if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+            }}>
               <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
-              <div className="w-8 h-8   flex items-center justify-center">
-              <img src="/images/services/mouse.png" alt="mouse" />
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src="/images/services/mouse.png" alt="mouse" />
               </div>
             </div>
           </section>
@@ -473,7 +476,9 @@ export default function Packages() {
           </div>
         </div>
       </section>
-      <Footer />
+      <div id="footer-packages">
+        <Footer />
+      </div>
     </div>
   );
 }

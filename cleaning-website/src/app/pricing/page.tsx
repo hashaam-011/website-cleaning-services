@@ -139,10 +139,13 @@ export default function Pricing() {
             </h1>
             <p className="max-w-4xl mx-auto text-gray-700 mb-10 text-center text-xl md:text-2xl">
             Our pricing is designed with flexibility and transparency in mind. Whether you need a quick clean or full-time help, we offer affordable packages that fit your schedule and budget—without compromising on quality. Explore our rates and choose the plan that works best for your space.            </p>
-            <div className="flex flex-col items-center mt-90">
+            <div className="flex flex-col items-center mt-90 cursor-pointer" onClick={() => {
+              const footer = document.getElementById('footer-pricing');
+              if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+            }}>
               <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
-              <div className="w-8 h-8   flex items-center justify-center">
-              <img src="/images/services/mouse.png" alt="mouse" />
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src="/images/services/mouse.png" alt="mouse" />
               </div>
             </div>
           </section>
@@ -577,7 +580,9 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-      <Footer />
+      <div id="footer-pricing">
+        <Footer />
+      </div>
     </div>
   );
 }
