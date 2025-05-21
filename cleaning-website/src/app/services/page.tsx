@@ -12,7 +12,7 @@ export default function Services() {
   return (
     <div className="font-sans bg-white text-[#222]">
       {/* Container for seamless header and hero section */}
-      <div className="w-full relative overflow-hidden min-h-[750px] py-12">
+      <div className="w-full relative overflow-hidden min-h-[600px] sm:min-h-[700px] md:min-h-[750px] py-8 sm:py-12">
         {/* Background image with fade */}
         <div className="absolute inset-0 flex w-full h-full z-0 bg-white">
           <div className="relative  h-full">
@@ -132,17 +132,14 @@ export default function Services() {
         </header>
 
         {/* Hero/Top Section Content (customize as needed) */}
-        <section className="w-full relative flex flex-col items-center justify-center min-h-[400px] pt-40 pb-20 z-10">
-          <h1 className="text-6xl md:text-8xl font-extrabold mb-6 text-center">
-            Our <span className="text-yellow-400">Services</span>
+        <section className="w-full relative flex flex-col items-center justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px] pt-32 sm:pt-40 pb-12 sm:pb-20 z-10">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-extrabold mb-4 sm:mb-6 text-center">
+            <span className="text-black">Our <span className="text-yellow-400">Services</span></span>
           </h1>
-          <p className="max-w-4xl mx-auto text-gray-700 mb-10 text-center text-xl md:text-2xl">
+          <p className="max-w-4xl mx-auto text-gray-700 mb-6 sm:mb-10 text-center text-base sm:text-lg md:text-xl lg:text-2xl px-4">
             Discover a range of premium cleaning services designed to suit your space, schedule, and lifestyle. Whether it's residential care, commercial upkeep, or deep cleaning, each service is delivered with unmatched attention to detail and professionalism. Our expertly trained staff, eco-conscious products, and customized plans ensure your environment is not just clean—but flawlessly maintained.
           </p>
-          <div className="flex flex-col items-center mt-90 cursor-pointer" onClick={() => {
-            const footer = document.getElementById('footer-services');
-            if (footer) footer.scrollIntoView({ behavior: 'smooth' });
-          }}>
+          <div className="flex flex-col items-center mt-10 cursor-pointer">
             <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
             <div className="w-8 h-8 flex items-center justify-center">
               <img src="/images/services/mouse.png" alt="mouse" />
@@ -152,7 +149,7 @@ export default function Services() {
       </div>
 
 
-<section className="w-full min-h-[900px] py-20 px-4 bg-white border-b relative overflow-hidden">
+<section className="w-full min-h-[900px] py-20 px-2 sm:px-4 bg-white border-b relative overflow-hidden">
   {/* Background image with fade */}
   <div className="absolute inset-0 flex w-full h-full z-0 bg-white">
     <div className="relative flex-1 h-full">

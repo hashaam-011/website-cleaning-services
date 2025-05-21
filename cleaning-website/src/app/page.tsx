@@ -78,6 +78,17 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* At the end of the hero/top section, add the mouse button */}
+        <div className="flex flex-col items-center mt-10 cursor-pointer" onClick={() => {
+          const footer = document.getElementById('footer-home');
+          if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+        }}>
+          <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
+          <div className="w-8 h-8 flex items-center justify-center">
+            <img src="/images/services/mouse.png" alt="mouse" />
+          </div>
+        </div>
       </div>
 
       {/* What we're offering section */}
@@ -486,7 +497,10 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* At the end of the file, wrap Footer in a div with id 'footer-home' */}
+      <div id="footer-home">
+        <Footer />
+      </div>
     </div>
   );
 }
