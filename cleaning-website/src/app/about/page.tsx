@@ -146,29 +146,30 @@ export default function Gallery() {
         </header>
 
           {/* Hero/Top Section Content (customize as needed) */}
-          <section className="w-full relative flex flex-col items-center justify-center min-h-[400px] pt-40 pb-20 z-10">
+          <section className="w-full relative flex flex-col items-center justify-center min-h-[400px] pt-40 pb-0 z-10">
           <h1 className="text-6xl md:text-8xl font-extrabold mb-6 text-center">
             Our <span className="text-yellow-400">Company</span>
           </h1>
-            <p className="max-w-4xl mx-auto text-gray-700 mb-10 text-center text-xl md:text-2xl">
-            At Cool Technical Services, we redefine the concept of cleanliness. With a focus on luxury and precision, our expert team transforms spaces into immaculate, elegant environments. Every service we offer is tailored to meet the highest standards of excellence, delivering results that speak for themselves. </p>
-            {/* Image with cut corners below description */}
-            <div className="flex justify-center my-8">
-              <Image
-                src="/images/about/3.jpg"
-                alt="Cool Technical Services Cleaning"
-                width={1329}
-                height={581}
-                className="object-cover"
-                style={{
-                  clipPath: 'polygon(40px 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%, 0 40px)'
-                }}
-              />
-            </div>
-            <div className="flex flex-col items-center mt-90">
-
-            </div>
-          </section>
+          <p className="max-w-4xl mx-auto text-gray-700 mb-10 text-center text-xl md:text-2xl">
+            At Cool Technical Services, we redefine the concept of cleanliness. With a focus on luxury and precision,
+            our expert team transforms spaces into immaculate, elegant environments. Every service we offer is tailored
+            to meet the highest standards of excellence, delivering results that speak for themselves.
+          </p>
+          {/* Image with cut corners below description */}
+          <div className="flex justify-center mt-8 mb-0">
+            <Image
+              src="/images/about/3.jpg"
+              alt="Cool Technical Services Cleaning"
+              width={1329}
+              height={581}
+              className="object-cover"
+              style={{
+                clipPath: "polygon(40px 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%, 0 40px)",
+              }}
+            />
+          </div>
+          {/* Removed empty div with mt-90 class */}
+        </section>
 
         </div>
 
@@ -176,29 +177,14 @@ export default function Gallery() {
 
 
       {/* About Us Section with faded background */}
-      <section className="w-full py-12 px-4 bg-white relative overflow-hidden min-h-[600px] flex items-center">
-        {/* Very light, dim background image */}
+      <section className="w-full py-12 px-2 sm:px-4 bg-white relative overflow-hidden min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image src="/images/about/4.png" alt="Decorative Background" fill className="object-cover opacity-20" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto w-full">
-          <h2 className="text-4xl font-bold mb-10 text-center">About us</h2>
-          <p
-            className="text-gray-800 leading-relaxed text-center mx-auto max-w-3xl"
-            style={{ fontSize: "16px", lineHeight: "1.8" }}
-          >
-            At Cool Technical Services, we're committed to making everyday spaces cleaner, healthier, and more livable.
-            With a wide range of cleaning services designed for modern lifestyles, we serve homes, apartments, offices,
-            retail spaces, and even post-construction sites across the UAE. Our highly trained team brings
-            professionalism, efficiency, and a personal touch to every visit, using eco-friendly products and proven
-            techniques to deliver consistently outstanding results. Whether you're booking us for a quick clean or ongoing
-            support, we offer flexible service packages tailored to your needs — from hourly cleaning sessions to
-            full-time, monthly arrangements. Choose from residential cleaning for villas and apartments, commercial
-            services for offices and malls, or deep cleaning for an intensive refresh. Our packages are designed to fit
-            your schedule: hourly slots (2, 4, or 8 hours), weekly care (2–6 days), or full-time monthly support with a
-            dedicated maid. At [Company Name], cleaning isn't just our job — it's our promise to enhance your comfort and
-            peace of mind. We pride ourselves on being a trusted partner in your daily life, ensuring your spaces are not
-            only clean but cared for with intention and respect.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center">About us</h2>
+          <p className="text-gray-800 leading-relaxed text-center mx-auto max-w-3xl text-base sm:text-lg md:text-xl" style={{ lineHeight: "1.8" }}>
+            At Cool Technical Services, we're committed to making everyday spaces cleaner, healthier, and more livable. With a wide range of cleaning services designed for modern lifestyles, we serve homes, apartments, offices, retail spaces, and even post-construction sites across the UAE. Our highly trained team brings professionalism, efficiency, and a personal touch to every visit, using eco-friendly products and proven techniques to deliver consistently outstanding results. Whether you're booking us for a quick clean or ongoing support, we offer flexible service packages tailored to your needs — from hourly cleaning sessions to full-time, monthly arrangements. Choose from residential cleaning for villas and apartments, commercial services for offices and malls, or deep cleaning for an intensive refresh. Our packages are designed to fit your schedule: hourly slots (2, 4, or 8 hours), weekly care (2–6 days), or full-time monthly support with a dedicated maid. At [Company Name], cleaning isn't just our job — it's our promise to enhance your comfort and peace of mind. We pride ourselves on being a trusted partner in your daily life, ensuring your spaces are not only clean but cared for with intention and respect.
           </p>
         </div>
       </section>
