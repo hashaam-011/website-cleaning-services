@@ -28,13 +28,13 @@ export default function ContactUs() {
       // Send email using EmailJS
       const result = await emailjs.send(
         'service_9hed9fr',
-        'template_fwejduv',
+        'template_yfshcpn',
         {
-          user_name: `${data.firstName} ${data.lastName}`,
-          user_email: data.email,
-          user_phone: data.contactNumber,
-          message: data.message,
-          to_email: 'info@cooltechnicalservices.ae'
+          title: 'New Contact Form Submission',
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          phone: data.contactNumber,
+          message: data.message
         },
         'rcl7bv84pMjBjjzAt'
       );
