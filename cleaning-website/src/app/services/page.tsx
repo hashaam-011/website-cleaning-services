@@ -139,11 +139,12 @@ export default function Services() {
           <p className="max-w-4xl mx-auto text-gray-700 mb-6 sm:mb-10 text-center text-base sm:text-lg md:text-xl lg:text-2xl px-4">
             Discover a range of premium cleaning services designed to suit your space, schedule, and lifestyle. Whether it's residential care, commercial upkeep, or deep cleaning, each service is delivered with unmatched attention to detail and professionalism. Our expertly trained staff, eco-conscious products, and customized plans ensure your environment is not just clean—but flawlessly maintained.
           </p>
-          <div className="flex flex-col items-center mt-10 cursor-pointer">
+          <div className="flex flex-col items-center mt-10 cursor-pointer" onClick={() => {
+            const footer = document.getElementById('footer-services');
+            if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+          }}>
             <span className="text-gray-500 text-sm mb-1">Scroll Down</span>
-            <div className="w-8 h-8 flex items-center justify-center">
-              <img src="/images/services/mouse.png" alt="mouse" />
-            </div>
+            <img src="/images/services/mouse.png" alt="mouse" className="w-8 h-8" />
           </div>
         </section>
       </div>
