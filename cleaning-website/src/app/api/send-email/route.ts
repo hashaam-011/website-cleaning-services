@@ -40,10 +40,11 @@ export async function POST(request: Request) {
     });
 
     // Verify SMTP connection configuration
-    await transporter.verify().catch(error => {
+    await transporter.verify().catch((error: any) => {
       console.error('SMTP Verification failed:', error);
       throw new Error(`SMTP Connection Error: ${error.message}`);
     });
+
 
     // Email content
     const mailOptions = {
