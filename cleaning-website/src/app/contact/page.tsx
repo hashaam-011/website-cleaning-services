@@ -11,7 +11,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with the public key
-emailjs.init("3kj8B_GfKuA4GwxSg");
+emailjs.init("rcl7bv84pMjBjjzAt");
 
 export default function ContactUs() {
   const pathname = usePathname();
@@ -27,27 +27,29 @@ export default function ContactUs() {
     try {
       // Send email using EmailJS
       const result = await emailjs.send(
-        'service_z6q1w9j',
-        'template_06l2ywi',
+        'service_9hed9fr',
+        'template_fwejduv',
         {
-          to_email: 'hashaambusiness@gmail.com',
-          from_name: `${data.firstName} ${data.lastName}`,
-          from_email: data.email,
-          phone: data.contactNumber,
-          message: data.message
-        }
+          user_name: `${data.firstName} ${data.lastName}`,
+          user_email: data.email,
+          user_phone: data.contactNumber,
+          message: data.message,
+          to_email: 'info@cooltechnicalservices.ae'
+        },
+        'rcl7bv84pMjBjjzAt'
       );
 
-      if (result.status === 200) {
+      if (result && result.status === 200) {
         setStatus('Message sent successfully! We will get back to you shortly.');
         if (event.currentTarget) {
           event.currentTarget.reset();
         }
       } else {
-        setStatus(`Failed to send message: ${result.text}`);
+        setStatus(`Failed to send message. Please try again later.`);
       }
     } catch (error: any) {
-      setStatus(`An error occurred: ${error.message}`);
+      console.error('Email sending error:', error);
+      setStatus(`Failed to send message. Please try again later.`);
     }
   };
 
